@@ -1,11 +1,5 @@
 TODO
 ====
- - Authentication with user token
-
- - Irc settings from Slack team
-  - Nick from token owner username
-  - Real name from token owner real name
-  - IRC server settings from slack team somewhere?
  - Relay messages from Slack
   - Channel join: Join IRC channel
   - Channel leave: Part IRC channel
@@ -26,3 +20,16 @@ TODO
   - !reload: reload application code
   - !logs: send logs
   - !status: send app status
+ - Resilient network connections
+  - IRC ping timeout
+  - Slack reconnect
+  - Event queue with smart retry
+
+
+Done
+----
+ - Authentication with user token
+ - Irc settings from Slack team
+  - Nick from token owner username
+  - Real name from token owner real name
+  - IRC server settings from slack team somewhere?

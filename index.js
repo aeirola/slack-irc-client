@@ -1,7 +1,7 @@
+#!/usr/bin/env node
 'use strict';
 
 var argv = require('yargs').argv;
-var EventEmitter = require('events');
 
 var IrcListener = require('./lib/irc-listener.js');
 var IrcHandler = require('./lib/irc-handler.js');
@@ -26,20 +26,20 @@ function start() {
     irc: {
       listener: new IrcListener(),
       handler: new IrcHandler(),
-      connection: null,
-      events: new EventEmitter()
+      client: null,
+      events: null
     },
     slack: {
       token: token,
       listener: new SlackListener(),
       handler: new SlackHandler(),
-      connection: null,
-      events: new EventEmitter()
+      client: null,
+      events: null
     },
     terminal: {
       listener: new TerminalListener(),
       handler: new TerminalHandler(),
-      events: new EventEmitter()
+      events: null
     }
   };
 

@@ -15,10 +15,11 @@
     "start": "node index.js"
   },
   "dependencies": {
-    "irc": "0.4.0",
-    "lodash": "3.10.1",
+    "irc": "^0.4.0",
+    "lodash": "^4.0.0",
+    "promise": "^7.1.1",
     "require-reload": "0.2.2",
-    "slack": "5.2.0",
-    "yargs": "3.31.0"
+    "slack-client": "^2.0.0-beta.2",
+    "yargs": "^3.31.0"
   }
 }
