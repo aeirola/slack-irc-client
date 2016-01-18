@@ -2,6 +2,7 @@
 'use strict';
 
 var argv = require('yargs').argv;
+var domain = require('domain');
 
 var IrcListener = require('./lib/irc-listener.js');
 var IrcHandler = require('./lib/irc-handler.js');
@@ -40,8 +41,15 @@ function start() {
       listener: new TerminalListener(),
       handler: new TerminalHandler(),
       events: null
-    }
+    },
+    domain: domain.create()
   };
+
+  // Handle errors thrown in event emitters
+  context.domain.on('error', function(error) {
+    console.error('Event listener failed.', error.stack);
+  });
+
 
   // Initialize listeners, IRC listener will be initialized from slack handler
   context.slack.listener.listen(context);
