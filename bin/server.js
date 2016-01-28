@@ -14,8 +14,7 @@ var argv = require('yargs')
   'v': {
     alias: 'verbose',
     describe: 'Verbose output',
-    count: true,
-    type: 'boolean'
+    type: 'count'
   }
 })
 .version(function() {
