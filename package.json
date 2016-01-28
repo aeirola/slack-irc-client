@@ -1,6 +1,6 @@
 {
   "name": "slack-irc-client",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "Use Slack as your IRC client",
   "author": "Axel Eirola <axel.eirola@iki.fi>",
   "license": "ISC",
@@ -9,7 +9,11 @@
     "type": "git",
     "url": "https://github.com/aeirola/slack-irc-client.git"
   },
-  "main": "index.js",
+  "keywords": [
+    "slack",
+    "irc"
+  ],
+  "bin": "./index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node index.js"
@@ -19,7 +23,8 @@
     "lodash": "^4.0.0",
     "promise": "^7.1.1",
     "require-reload": "0.2.2",
-    "slack-client": "^2.0.0-beta.2",
+    "slack-client": "^2.0.0-beta.3",
+    "winston": "^2.1.1",
     "yargs": "^3.31.0"
   }
 }
