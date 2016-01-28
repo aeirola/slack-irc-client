@@ -25,16 +25,16 @@ var argv = require('yargs')
 .alias('h', 'help').argv;
 
 var domain = require('domain');
-var logger = require('./lib/logger.js');
+var logger = require('../lib/logger.js');
 
-var IrcListener = require('./lib/irc-listener.js');
-var IrcHandler = require('./lib/irc-handler.js');
+var IrcListener = require('../lib/irc-listener.js');
+var IrcHandler = require('../lib/irc-handler.js');
 
-var SlackListener = require('./lib/slack-listener.js');
-var SlackHandler = require('./lib/slack-handler.js');
+var SlackListener = require('../lib/slack-listener.js');
+var SlackHandler = require('../lib/slack-handler.js');
 
-var TerminalListener = require('./lib/terminal-listener.js');
-var TerminalHandler = require('./lib/terminal-handler.js');
+var TerminalListener = require('../lib/terminal-listener.js');
+var TerminalHandler = require('../lib/terminal-handler.js');
 
 function start() {
   // Set logging level
