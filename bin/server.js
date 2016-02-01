@@ -26,14 +26,14 @@ var argv = require('yargs')
 var domain = require('domain');
 var logger = require('../lib/logger.js');
 
-var IrcListener = require('../lib/irc-listener.js');
-var IrcHandler = require('../lib/irc-handler.js');
+var ircListener = require('../lib/irc-listener.js');
+var ircHandler = require('../lib/irc-handler.js');
 
-var SlackListener = require('../lib/slack-listener.js');
-var SlackHandler = require('../lib/slack-handler.js');
+var slackListener = require('../lib/slack-listener.js');
+var slackHandler = require('../lib/slack-handler.js');
 
-var TerminalListener = require('../lib/terminal-listener.js');
-var TerminalHandler = require('../lib/terminal-handler.js');
+var terminalListener = require('../lib/terminal-listener.js');
+var terminalHandler = require('../lib/terminal-handler.js');
 
 function start() {
   // Set logging level
@@ -50,21 +50,21 @@ function start() {
 
   var context = {
     irc: {
-      listener: new IrcListener(),
-      handler: new IrcHandler(),
+      listener: ircListener,
+      handler: ircHandler,
       client: null,
       events: null
     },
     slack: {
       token: argv.token,
-      listener: new SlackListener(),
-      handler: new SlackHandler(),
+      listener: slackListener,
+      handler: slackHandler,
       client: null,
       events: null
     },
     terminal: {
-      listener: new TerminalListener(),
-      handler: new TerminalHandler(),
+      listener: terminalListener,
+      handler: terminalHandler,
       events: null
     },
     logger: logger,
@@ -77,8 +77,8 @@ function start() {
   });
 
   // Initialize listeners, IRC listener will be initialized from slack handler
-  context.slack.listener.listen(context);
-  context.terminal.listener.listen(context);
+  context.slack.listener.init(context);
+  context.terminal.listener.init(context);
 }
 
 start();
