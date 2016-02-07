@@ -14,7 +14,6 @@ Features
   * IRC queries mapped to private groups
     * Groups automatically created/joined/unarchived on new messages
   * IRC topic changes updated in Slack
-    * Vice versa not yet supported
   * Status messages sent to Slackbot windows
   * `/me` action messages
   * Configuration from Slack user

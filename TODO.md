@@ -1,7 +1,6 @@
 TODO
 ====
 
-  - Topic updates from Slack
   - File upload
     - Create public link and send that on IRC
   - Client control
