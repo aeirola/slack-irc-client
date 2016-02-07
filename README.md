@@ -27,7 +27,8 @@ Installation
 ------------
 
   1. Create new Slack team only for yourself
-  2. Get API token from https://api.slack.com/web
-  3. Install `slack-irc-client` from npm
-  4. Start it with `slack-irc-client -t ${SLACK_API_TOKEN}`
-  5. Chat from your Slack
+  2. Set configuration in "What I do field"
+  3. Get API token from https://api.slack.com/web
+  4. Install `slack-irc-client` from npm
+  5. Start it with `slack-irc-client -t ${SLACK_API_TOKEN}`
+  6. Chat from your Slack
