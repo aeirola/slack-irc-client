@@ -13,6 +13,10 @@ Features
     - !status: send app status
   - Resilient network connections
     - Event queue with smart retry
+  - Add profile images
+   - GitHub identicons `https://github.com/identicons/nick.png`
+   - RoboHash `https://robohash.org/nick.png?size=48x48&bgset=bg2`
+   - Adorable Avatars `http://api.adorable.io/avatars/48/nick.png`
 
 
 Bugs
