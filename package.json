@@ -18,7 +18,7 @@
   ],
   "bin": "./bin/server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "mocha",
     "start": "node ./bin/server.js"
   },
   "dependencies": {
@@ -35,5 +35,9 @@
   "directories": {
     "bin": "./bin",
     "lib": "./lib"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^2.4.5"
   }
 }

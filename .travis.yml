@@ -2,3 +2,11 @@ language: node_js
 node_js:
 - '0.11'
 - '0.10'
+deploy:
+  provider: npm
+  email: axel.eirola@iki.fi
+  api_key:
+    secure: p2v7p3q1BQOgyza6vSAC51FSI+4ucVVOmmK2qy4muI3pyDb150ta98iahW5zHQPon5YMIDQMMM8RDP9z/sehiwjnUvVGQ3YAWoJdzJFl85PhZWC3406lDHQSsaIigJk2wck/jKS2W8vXOSj9fzjLS8DFqD380wSIElMGj4HkOllWEhwoH3HYl4gBfAWBKFx3UdJqyoJC0/3o8xM4QpWph4VKXykXfwUVJy9RU32vH5FP8Apy107ZlUnWcDmHXI2cJX62GUoz6Xj/DmH9+66XLzVKQaYXcfRfe7f3ebuSgwNHOix1AoBn57UR0cLFwhLoJJW7nU/HaArgVdt9t/PxJG2fBjTvAyDpiirddGWfrSVuu6JC9HziluDsEZnESqDc8gqa0ge0M+MBSQFezalCMrQbajMPQFzjHHgeTSSBycZOeNDBIJN7tGbXF84k+b6maFqvvY7DF6VspZYCvziKDyniQk0fibv/eYMU9pBXJECOp5ysCwh2RZmhrjcsqpQ7SWtTfIMV2wjfGvd1/SLcz9CYiKr7pLWboRpPXGL4sXw954KdlxEEtf+/Jh1mB8dOcv7yyb9E7dWta7NDupxUGDoXVi2lIchvJpTjOuHC2M++VYbfSmQbqPijCReIALS4Ze6f0Knh5BYb4E0QwU5202ZcrrI4cdTvvoraWsFQwJ4=
+  on:
+    tags: true
+    repo: aeirola/slack-irc-client
