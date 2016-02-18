@@ -3,6 +3,8 @@ node_js:
 - '0.12'
 - '4'
 - '5'
+install: npm install --no-optional
+script: npm test
 deploy:
   provider: npm
   email: axel.eirola@iki.fi
