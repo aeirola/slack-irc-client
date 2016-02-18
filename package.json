@@ -22,6 +22,7 @@
     "start": "node ./bin/server.js"
   },
   "dependencies": {
+    "gravatar": "^1.4.0",
     "irc": "martynsmith/node-irc",
     "lodash": "^4.3.0",
     "promise": "^7.1.1",

@@ -21,6 +21,18 @@ describe('irc-handler', function() {
     expect(context.irc.events.listeners('message').length).to.be.above(0);
   });
 
+  it('should include icon in Slack messages', function() {
+    context.irc.events.emit('message', 'ircer', '#activity', 'hello', {});
+
+    expect(context.slack.client.web.chat.postMessage).to.have.been.calledWith(
+      'activity',
+      'hello',
+      sinon.match({
+        'icon_url': sinon.match.string
+      })
+    );
+  });
+
   it('should notify of nick change to nick channels', function() {
     context.irc.client.chans['#activity'].users['ircer__'] = context.irc.client.chans['#activity']['ircer'];
     delete context.irc.client.chans['#activity'].users['ircer'];
