@@ -18,7 +18,7 @@
   ],
   "bin": "./bin/server.js",
   "scripts": {
-    "test": "mocha",
+    "test": "eslint bin/ lib/ test/ && mocha",
     "start": "node ./bin/server.js"
   },
   "dependencies": {
@@ -39,6 +39,7 @@
   },
   "devDependencies": {
     "chai": "^3.5.0",
+    "eslint": "^2.1.0",
     "mocha": "^2.4.5",
     "sinon": "^1.17.3",
     "sinon-chai": "^2.8.0"

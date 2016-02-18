@@ -1,13 +1,12 @@
 'use strict';
 
-var chai = require("chai");
-var sinon = require("sinon");
-var sinonChai = require("sinon-chai");
+var chai = require('chai');
+var sinon = require('sinon');
+var sinonChai = require('sinon-chai');
 var expect = chai.expect;
 chai.use(sinonChai);
 
 var ircHandler = require('../lib/irc-handler');
-var EventEmitter = require('events');
 
 describe('irc-handler', function() {
   var context;
