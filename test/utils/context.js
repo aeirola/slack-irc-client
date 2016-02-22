@@ -16,6 +16,12 @@ module.exports = function() {
               'slacker': {},
             },
           },
+          '!PAJKLsecrecy': {
+            users: {
+              'ircer': {},
+              'slacker': {},
+            },
+          },
           '#emptyness': {
             users: {},
           },
@@ -29,6 +35,22 @@ module.exports = function() {
       handler: {},
       client: {
         data: {
+          channels: {
+            '0000000001': {
+              name: 'activity',
+            },
+            '0000000002': {
+              name: 'secrecy',
+              purpose: {
+                value: JSON.stringify({
+                  channelName: '!PAJKLsecrecy'
+                })
+              }
+            },
+            '0000000003': {
+              name: 'emptyness',
+            },
+          },
           getGroupByName: sinon.stub(),
           getChannelByName: sinon.stub(),
         },
