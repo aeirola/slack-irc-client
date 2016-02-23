@@ -19,7 +19,9 @@
   "bin": "./bin/server.js",
   "scripts": {
     "test": "eslint bin/ lib/ test/ && mocha",
-    "start": "node ./bin/server.js"
+    "start": "node ./bin/server.js",
+    "preversion": "npm test",
+    "postversion": "git push && git push --tags"
   },
   "dependencies": {
     "gravatar": "^1.4.0",
