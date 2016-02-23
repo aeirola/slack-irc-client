@@ -1,6 +1,9 @@
 Slack IRC client
 ================
 
+[![Build Status](https://travis-ci.org/aeirola/slack-irc-client.svg?branch=master)](https://travis-ci.org/aeirola/slack-irc-client)
+[![NPM Version](https://img.shields.io/npm/v/slack-irc-client.svg)](https://www.npmjs.com/package/slack-irc-client)
+
 *Work in progress. Proceed with caution. Testers and contributions are welcome.*
 
 Slack IRC client is a node.js application that acts as an IRC client as well as a Slack client, bridging communication between the two networks for a single user.
