@@ -1,7 +1,7 @@
 Slack IRC client
 ================
 
-*Work in progress. Proceed with caution.*
+*Work in progress. Proceed with caution. Testers and contributions are welcome.*
 
 Slack IRC client is a node.js application that acts as an IRC client as well as a Slack client, bridging communication between the two networks for a single user.
 
@@ -39,15 +39,15 @@ Instructions
     - For example:
       ```json
       {
-        "server": "irc6.cc.tut.fi",
-        "port": 6667,
+        "server": "open.ircnet.net",
+        "port": 6668,
         "userName": "aeirola"
       }
       ```
   4. Get user API token for your team at https://api.slack.com/web#authentication
   5. Install `slack-irc-client` from npm
     ```bash
-    npm install -g aeirola/slack-irc-client
+    npm install -g slack-irc-client
     ```
   6. Start the gateway with
     ```bash
@@ -61,7 +61,7 @@ Instructions
 
   1. Update the npm package:
   ```bash
-  npm update -g aeirola/slack-irc-client
+  npm update -g slack-irc-client
   ```
   2. Reload the code by entering the command `reload` in the terminal running the application
 
