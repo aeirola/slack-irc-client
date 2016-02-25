@@ -1,6 +1,6 @@
 'use strict';
 var winston = require('winston');
-var EventEmitter = require('events');
+var EventEmitter = require('events').EventEmitter;
 var sinon = require('sinon');
 
 module.exports = function() {
