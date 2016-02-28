@@ -16,11 +16,11 @@ It differs from the splendid [ekmartin/slack-irc](https://github.com/ekmartin/sl
 Features
 --------
 
-  * Chat on any IRC channel form your favorite Slack client
-  * Send and receive IRC queries
-  * Channel topics are synced both ways
-  * Status messages delivered to Slackbot DM chat
-  * Configured through Slack user and channel metadata
+*  Chat on any IRC channel form your favorite Slack client
+*  Send and receive IRC queries
+*  Channel topics are synced both ways
+*  Status messages delivered to Slackbot DM chat
+*  Configured through Slack user and channel metadata
 
 
 
@@ -30,43 +30,54 @@ Instructions
 
 ### Installation
 
-  1. Create new Slack team at https://slack.com/create
-    - **Don't invite anyone else to the team**
-    - Adding multiple users *will* lead to duplicate messages being sent to IRC
-  2. Create and join the Slack channels you want to join in IRC
-  3. Set configuration in your user profile "What I do field" at https://slack.com/account/profile
-    - JSON formatted string with the following fields
-      - `server`: IRC server to connect to
-      - `port`: Port to connect to (defaults to 6668)
-    - All fields will be passed to [`node-irc`](http://node-irc.readthedocs.org/en/latest/API.html#irc.Client)
-    - For example:
-      ```json
-      {
-        "server": "open.ircnet.net",
-        "port": 6668,
-        "userName": "aeirola"
-      }
-      ```
-  4. Get user API token for your team at https://api.slack.com/web#authentication
-  5. Install `slack-irc-client` from npm
+1.  Create new Slack team at https://slack.com/create
+
+    -  **Don't invite anyone else to the team**
+    -  Adding multiple users *will* lead to duplicate messages being sent to IRC
+
+2.  Create and join the Slack channels you want to join in IRC
+3.  Set configuration in your user profile "What I do field" at https://slack.com/account/profile
+
+    -  JSON formatted string with the following fields
+        -  `server`: IRC server to connect to
+        -  `port`: Port to connect to (defaults to 6668)
+    -  All fields will be passed to [`node-irc`](http://node-irc.readthedocs.org/en/latest/API.html#irc.Client)
+    -  For example:
+
+        ```json
+        {
+          "server": "open.ircnet.net",
+          "port": 6668,
+          "userName": "aeirola"
+        }
+        ```
+
+4.  Get user API token for your team at https://api.slack.com/web#authentication
+5.  Install `slack-irc-client` from npm
+
     ```bash
     npm install -g slack-irc-client
     ```
-  6. Start the gateway with
+
+6.  Start the gateway with
+
     ```bash
     slack-irc-client -t ${SLACK_API_TOKEN}
     ```
-  7. Chat from your Slack!
+
+7.  Chat from your Slack!
 
 
 
 ### Upgrade
 
-  1. Update the npm package:
-  ```bash
-  npm update -g slack-irc-client
-  ```
-  2. Reload the code by entering the command `reload` in the terminal running the application
+1.  Update the npm package:
+
+    ```bash
+    npm update -g slack-irc-client
+    ```
+
+2.  Reload the code by entering the command `reload` in the terminal running the application
 
 
 
@@ -81,7 +92,7 @@ Normal channels with names that adhere to Slacks channel naming convention (max 
 
 If you need to join other types of channels, you need to add a channel configuration in the channel "Purpose" field. The value of this field should be a JSON formatted string containing the following fields:
 
-  * `channelName`: The IRC channel name to use
+*  `channelName`: The IRC channel name to use
 
 For example:
 
@@ -119,7 +130,7 @@ Reloads event handler code for upgrading without breaking network connections.
 
 Set terminal output log level. Supported log levels are:
 
-* `silly`
-* `debug`
-* `verbose`
-* `info`
+*  `silly`
+*  `debug`
+*  `verbose`
+*  `info`
