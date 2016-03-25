@@ -18,7 +18,7 @@ var argv = require('yargs')
   }
 })
 .version(function() {
-  return require('./package.json').version;
+  return require('../package.json').version;
 })
 .help('h')
 .alias('h', 'help').argv;
