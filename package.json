@@ -25,13 +25,13 @@
   },
   "dependencies": {
     "@slack/client": "^2.3.0",
-    "gravatar": "^1.4.0",
-    "irc": "martynsmith/node-irc",
-    "lodash": "^4.3.0",
+    "gravatar": "^1.5.2",
+    "irc": "^0.5.0",
+    "lodash": "^4.6.1",
     "promise": "^7.1.1",
     "require-reload": "0.2.2",
-    "winston": "^2.1.1",
-    "yargs": "^4.1.0"
+    "winston": "^2.2.0",
+    "yargs": "^4.3.2"
   },
   "preferGlobal": true,
   "private": false,
