@@ -4,6 +4,7 @@ node_js:
 - '0.12'
 - '4'
 - '5'
+before_install: if [[ `npm -v` < 2 ]]; then npm i -g npm@latest-2; fi
 install: npm install --no-optional
 script: npm test
 deploy:
