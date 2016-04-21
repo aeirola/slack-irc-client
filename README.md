@@ -52,7 +52,7 @@ Instructions
         }
         ```
 
-4.  Get user API token for your team at https://api.slack.com/web#authentication
+4.  Generate a Test token for your newly created team at https://api.slack.com/docs/oauth-test-tokens
 5.  Install `slack-irc-client` from npm
 
     ```bash
