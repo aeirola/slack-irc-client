@@ -105,6 +105,9 @@ app.get('/callback', function(req, res) {
   });
 });
 
+// Trust the Heroku proxy
+app.enable('trust proxy');
+
 app.listen(PORT, function () {
   console.log(`Token server listening on port ${PORT}!`);
 });
