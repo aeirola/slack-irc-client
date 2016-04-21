@@ -1,0 +1,30 @@
+{
+  "name": "slack-irc-client-token-server",
+  "version": "1.0.0",
+  "description": "Slack token server for slack-irc-client",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aeirola/slack-irc-client.git"
+  },
+  "keywords": [
+    "slack",
+    "irc",
+    "token"
+  ],
+  "author": "Axel Eirola <axel.eirola@iki.fi>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aeirola/slack-irc-client/issues"
+  },
+  "homepage": "https://github.com/aeirola/slack-irc-client",
+  "dependencies": {
+    "express": "^4.13.4",
+    "node-uuid": "^1.4.7",
+    "simple-oauth2": "^0.6.0"
+  }
+}
