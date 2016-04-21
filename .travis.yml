@@ -1,0 +1,11 @@
+language: node_js
+node_js:
+- '4'
+deploy:
+  provider: heroku
+  api_key:
+    secure: nZ8DVlZE9OXu0MjcqfCU0YsWN5MiEN5m85ZOw69rZYf+54XI1YgcH/d9L0EtAf5K5NBSx9JGkYGNEnYxh1SKgsikHLk6SHIVxdKqeVsnSLwVZhQ8biQuo/EiO2SlV6cJ5rHhfqhGBRT0omw/wpMvWE0ic0FxumTe4/k9idro9oK5i8kQd6eKsV27g7ct7lAq/S8zxbZKxvFfGcWkoVzSsHRs/hkanaE/hFp+eZc/6KezvgF6YBkx2JKYaoX3p8TnSuUF6IoNO1q192lxi5SZn12z9lJ4bW3eAzSqYrekcWEVQas02+MVA1THF1IdaK8hQJiyfnDmS7OX8lEUaDYAN1ZiMmlV0+qReYuqMdshvcxrALGwTe5aUUX7hexzpqABo4SSps/i5EwEW4tRuwVIELOZ7jUc1Jac/j50yleepmD7Ggit5IQWODPXM77z6JoOpS4PykGBPCSSIbX5ojN1Y4NPypJ9CSX7fYaVdnJTwk58EARUT1csD/ywiEe6Iy/lJqGm1hPY8ysilOh2QczXbAO+/uGJMUuk538tz3fZel4DDsDfkrhycSWZv+viQpvEWRLOGUGniINOKatx0KT46wARFKgLdekJ+3t3+Id+SePdqUu4KQPB/ob7xJCr0RduOmMWbFBLzS9bYp3cB+tzrWJRX00FKeL0M33dXG+Wi/4=
+  app: slack-irc-client-token-server
+  on:
+    repo: aeirola/slack-irc-client
+    branch: token-server
