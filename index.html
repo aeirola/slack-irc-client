@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Slack IRC client - Token generator</title>
+
+    <style media="screen">
+      body {
+        margin: 2em;
+
+        background: white;
+        color: black;
+
+        font-family: monospace;
+      }
+
+      h1 {
+        margin: 2em 0;
+      }
+
+      #output {
+        font-size: 12pt;
+        white-space: pre-wrap;
+      }
+
+      #generate-token-button {
+        margin: 1em 0;
+
+        background: white;
+        color: black;
+
+        font-family: monospace;
+        font-size: 12pt;
+
+        border: 1px solid #848484;
+        border-radius: 0.5em;
+        padding: 0.25em 0.5em;
+      }
+
+    </style>
+
+    <script type="text/javascript">
+      function getQueryParam(param) {
+        var regex = new RegExp('[?&]' + param + '=([^&#]+)');
+        var match = window.location.search.match(regex) || [];
+        var value = match[1] || '';
+        return value;
+      }
+
+      function init() {
+        var outputElement = document.getElementById('output');
+
+        outputElement.innerHTML += 'Welcome to the slack-irc-client token generation service.\n';
+        outputElement.innerHTML += 'Press the button below to generate your token.\n\n\n';
+
+        // Check for errors in query params
+        var error = getQueryParam('error');
+        if (error) {
+          outputElement.innerHTML += 'Error generating token:\n';
+          outputElement.innerHTML += error + '\n\n';
+        }
+
+        // Check for token in query params
+        var token = getQueryParam('token');
+        if (token) {
+          outputElement.innerHTML += 'Your Slack token is:\n\n';
+          outputElement.innerHTML += token + '\n\n\n';
+        }
+
+        if (token) {
+          outputElement.innerHTML += 'Testing token... ';
+
+          httpRequest = new XMLHttpRequest();
+          httpRequest.onreadystatechange = function() {
+            if (httpRequest.readyState === XMLHttpRequest.DONE) {
+              var response;
+              try {
+                if (httpRequest.responseText) {
+                  response = JSON.parse(httpRequest.responseText);
+                } else {
+                  response = {};
+                }
+              } catch(e) {
+                response = {
+                  error: e
+                };
+              };
+
+              if (httpRequest.status === 200 && response.ok) {
+                outputElement.innerHTML += 'success!\n\n';
+                outputElement.innerHTML += 'Team: ' + response.team + '\n';
+                outputElement.innerHTML += 'User: ' + response.user + '\n';
+                outputElement.innerHTML += 'URL: ' + response.url + '\n';
+              } else {
+                console.log(httpRequest)
+                outputElement.innerHTML += 'failure!\n\n';
+                outputElement.innerHTML += 'Status: ' + httpRequest.status + ' ' + httpRequest.statusText + '\n';
+                outputElement.innerHTML += 'Error: ' + response.error + '\n';
+              }
+            }
+          };
+
+          httpRequest.open('GET', 'https://slack.com/api/auth.test?token=' + token);
+          httpRequest.setRequestHeader('Accept', 'application/json');
+          httpRequest.send();
+
+        }
+
+        // Bind button click event listener
+        document.getElementById('generate-token-button').addEventListener('click', function(event) {
+          event.preventDefault();
+          var callbackUri = window.location.origin + window.location.pathname;
+          window.location.href = 'https://slack-irc-client-token-server.herokuapp.com/auth?callback=' + encodeURIComponent(callbackUri);
+        });
+      }
+
+      window.onload = init;
+    </script>
+  </head>
+  <body>
+    <h1>Slack IRC Client token generator</h1>
+    <p id="output"></p>
+    <button id="generate-token-button" type="button" name="button">Generate token</button>
+  </body>
+</html>
