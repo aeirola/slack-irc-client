@@ -86,14 +86,14 @@ app.get('/callback', function(req, res) {
     // Check callback error
     if (error) {
       console.error('Access Token Error:', error.message);
-      res.redirect(`callbackUri?error=${error.message}`);
+      res.redirect(`${callbackUri}?error=${error.message}`);
       return;
     }
 
     // Check response data
     if (!result.ok) {
       console.error('Access Token Error:', result.error);
-      res.redirect(`callbackUri?error=${result.error}`);
+      res.redirect(`${callbackUri}?error=${result.error}`);
       return;
     }
 
@@ -101,7 +101,7 @@ app.get('/callback', function(req, res) {
 
     // Send response
     const token = oauth2.accessToken.create(result);
-    res.redirect(`callbackUri?token=${token.token.access_token}`);
+    res.redirect(`${callbackUri}?token=${token.token.access_token}`);
   });
 });
 
