@@ -35,7 +35,7 @@ Instructions
     -  **Don't invite anyone else to the team**
     -  Adding multiple users *will* lead to duplicate messages being sent to IRC
 
-2.  Create and join the Slack channels you want to join in IRC
+2.  Remove the default channels, create and join the Slack channels you want to join in IRC
 3.  Set configuration in your user profile "What I do field" at https://slack.com/account/profile
 
     -  JSON formatted string with the following fields
@@ -52,7 +52,7 @@ Instructions
         }
         ```
 
-4.  Generate a Test token for your newly created team at https://api.slack.com/docs/oauth-test-tokens
+4.  Generate a Test token for your newly created team at http://aeirola.github.io/slack-irc-client/
 5.  Install `slack-irc-client` from npm
 
     ```bash
