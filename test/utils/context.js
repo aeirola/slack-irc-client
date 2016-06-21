@@ -4,9 +4,11 @@ var EventEmitter = require('events').EventEmitter;
 var sinon = require('sinon');
 
 module.exports = function() {
-  return {
+  var context = {
     irc: {
-      listener: {},
+      listener: {
+        init: sinon.stub()
+      },
       handler: {},
       client: {
         chans: {
@@ -31,13 +33,16 @@ module.exports = function() {
     },
     slack: {
       token: '',
-      listener: {},
+      listener: {
+        init: sinon.stub()
+      },
       handler: {},
       client: {
         data: {
           channels: {
             '0000000001': {
               name: 'activity',
+              is_member: true
             },
             '0000000002': {
               name: 'secrecy',
@@ -45,16 +50,39 @@ module.exports = function() {
                 value: JSON.stringify({
                   channelName: '!PAJKLsecrecy'
                 })
-              }
+              },
+              is_member: true
             },
             '0000000003': {
               name: 'emptyness',
             },
           },
+          teams: {
+            'T00000001': {
+              name: 'Testing team'
+            }
+          },
+          users: {
+            'U00000001': {
+              name: 'Testing user',
+              profile: {
+                title: ''
+              }
+            }
+          },
           getGroupByName: sinon.stub(),
           getChannelByName: sinon.stub(),
+          getTeamById: sinon.spy(function getTeamById(teamId) {
+            return context.slack.client.data.teams[teamId];
+          }),
+          getUserById: sinon.spy(function getUserById(userId) {
+            return context.slack.client.data.users[userId];
+          })
         },
-        rtm: {},
+        rtm: {
+          activeTeamId: 'T00000001',
+          activeUserId: 'U00000001'
+        },
         web: {
           chat: {
             postMessage: sinon.stub(),
@@ -85,4 +113,12 @@ module.exports = function() {
       ]
     })
   };
+
+  sinon.spy(context.logger, 'debug');
+  sinon.spy(context.logger, 'verbose');
+  sinon.spy(context.logger, 'info');
+  sinon.spy(context.logger, 'warn');
+  sinon.spy(context.logger, 'error');
+
+  return context;
 };
