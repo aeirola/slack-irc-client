@@ -1,6 +1,6 @@
 {
   "name": "slack-irc-client",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "Use Slack as your IRC client",
   "author": "Axel Eirola <axel.eirola@iki.fi>",
   "license": "ISC",
