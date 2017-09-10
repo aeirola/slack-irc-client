@@ -51,6 +51,10 @@ Instructions
           "userName": "aeirola"
         }
         ```
+    -   Optionally, a string field `nsPassword` will cause the bot to send 
+          `/msg Nickserv IDENTIFY ${nsPassword}` after 5 seconds of being 
+          connected which is the correct format for freenode's nickserv. 
+          Other nickservs may not like this format, but it's a start.
 
 4.  Generate a Test token for your newly created team at http://aeirola.github.io/slack-irc-client/
 5.  Install `slack-irc-client` from npm
