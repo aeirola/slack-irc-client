@@ -45,9 +45,10 @@ describe('irc-handler', function() {
       sinon.match({
         as_user: false,
         attachments: JSON.stringify([{
-          fallback: 'ircer changed nick to ircer__',
-          text: 'ircer changed nick to ircer__',
-          mrkdwn_in: ['text']
+          fallback: '*ircer* changed nick to *ircer__*',
+          text: '*ircer* changed nick to *ircer__*',
+          mrkdwn_in: ['text'],
+          color: '#aaeeee'
         }])
       })
     );
@@ -57,9 +58,10 @@ describe('irc-handler', function() {
       sinon.match({
         as_user: false,
         attachments: JSON.stringify([{
-          fallback: 'ircer changed nick to ircer__',
-          text: 'ircer changed nick to ircer__',
-          mrkdwn_in: ['text']
+          fallback: '*ircer* changed nick to *ircer__*',
+          text: '*ircer* changed nick to *ircer__*',
+          mrkdwn_in: ['text'],
+          color: '#aaeeee'
         }])
       })
     );
