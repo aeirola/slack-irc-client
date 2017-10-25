@@ -118,6 +118,25 @@ If an IRC users sends you a direct message, a new Slack group chat will be creat
 
 If you want to initiate a 1-to-1 chat with an IRC user that has not yet sent you an message, you need to create a new Slack group chat with the nick of the IRC user you want to contact.
 
+#### Additional IRC options
+
+Since the `What I do` field is directly parsed into a JSON object, you can supply additional commands, listed at the [node-irc API documentation](http://node-irc.readthedocs.io/en/latest/API.html#client). For example, if you want to connect with SASL, which you might need to from an AWS server to Freenode, your configuration could look like the following,
+
+```json
+{
+     "server": "irc.freenode.net", 
+     "port": 6697, 
+     "userName": "NICKNAME", 
+     "nsPassword": "PASSWORD", 
+     "sasl": true, 
+     "nick": "NICKNAME",
+     "password": "PASSWORD", 
+     "realName": "MY REAL NAME", 
+     "secure": true 
+}
+```
+
+Which will set `sasl` to true, along with enabling SSL. Of course you need to replace the placeholders above with your own settings.
 
 
 #### Terminal commands
