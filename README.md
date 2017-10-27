@@ -119,7 +119,7 @@ To ignore JOINs, PARTs, QUITs, KICKs and KILLs you can configure your `What I do
 {
   "server": "open.ircnet.net",
   // ...
-  "mute": ["join", "part", "quit", "kick", "kill"]
+  "muteIrcEvents": ["join", "part", "quit", "kick", "kill"]
 }
 ```
 
