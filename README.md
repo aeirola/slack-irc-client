@@ -51,9 +51,9 @@ Instructions
           "userName": "aeirola"
         }
         ```
-    -   Optionally, a string field `nsPassword` will cause the bot to send 
-          `/msg Nickserv IDENTIFY ${nsPassword}` after 5 seconds of being 
-          connected which is the correct format for freenode's nickserv. 
+    -   Optionally, a string field `nsPassword` will cause the bot to send
+          `/msg Nickserv IDENTIFY ${nsPassword}` after 5 seconds of being
+          connected which is the correct format for freenode's nickserv.
           Other nickservs may not like this format, but it's a start.
 
 4.  Generate a Test token for your newly created team at http://aeirola.github.io/slack-irc-client/
@@ -111,6 +111,19 @@ For example:
 This can also be used if you just want the channel name to show differently within Slack.
 
 
+#### Ignoring JOIN, PART, QUIT etc
+
+To ignore JOINs, PARTs, QUITs, KICKs and KILLs you can configure your `What I do` JSON object to include,
+
+```json
+{
+  "server": "open.ircnet.net",
+  // ...
+  "muteIrcEvents": ["join", "part", "quit", "kick", "kill"]
+}
+```
+
+And you'll no longer see these messages in your Slack channels.
 
 #### Sending direct messages
 
