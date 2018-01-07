@@ -1,3 +1,5 @@
+*Maintainer needed, see [#33](https://github.com/aeirola/slack-irc-client/issues/33)*
+
 Slack IRC client
 ================
 
