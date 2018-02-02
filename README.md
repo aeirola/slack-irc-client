@@ -113,19 +113,34 @@ For example:
 This can also be used if you just want the channel name to show differently within Slack.
 
 
-#### Ignoring JOIN, PART, QUIT etc
+#### Ignoring JOIN, PART, QUIT, etc.
 
-To ignore JOINs, PARTs, QUITs, KICKs and KILLs you can configure your `What I do` JSON object to include,
+To ignore various messages, you can configure your `What I do` JSON object to
+include the `muteIrcEvents` field:
 
 ```json
 {
   "server": "open.ircnet.net",
   // ...
-  "muteIrcEvents": ["join", "part", "quit", "kick", "kill"]
+  "muteIrcEvents": ["join", ...]
 }
 ```
 
 And you'll no longer see these messages in your Slack channels.
+
+Valid values for this field are as follows:
+
+| Value   | Description                                     |
+| ------- | ----------------------------------------------- |
+| `join`  | Mute JOIN messages in the channel               |
+| `kick`  | Mute KICK messages in the channel               |
+| `kill`  | Mute KILL messages in the channel               |
+| `motd`  | Mute MOTD direct messages from slackbot on join |
+| `names` | Mute membership list in the channel on join     |
+| `part`  | Mute PART messages in the channel               |
+| `quit`  | Mute QUIT messages in the channel               |
+| `topic` | Don't set the topic in the channel on join      |
+
 
 #### Sending direct messages
 
